@@ -1,0 +1,50 @@
+<div #contact class="modal fade" id="MODALS.CONTACT" tabindex="-1" role="dialog" aria-labelledby="contactTitle"
+    aria-bs-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form [formGroup]="form" (ngSubmit)="onSend()">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactTitle"><i class="fa fa-1x" [ngClass]="form.get('name')!.touched && 
+                            form.get('email')!.touched && 
+                            form.get('message')!.touched && 
+                            form.invalid ? 'fa-warning invalid-text' : ''" aria-hidden="true">
+                        </i>Leave a message</h5>
+                    <app-closing-cross data-bs-dismiss="modal"></app-closing-cross>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label [for]="FIELD.NAME" class="col-form-label asterix">Name:</label>
+                        <input type="text" class="form-control" [id]="FIELD.NAME" [formControlName]="FIELD.NAME"
+                            [ngClass]="{
+                                'valid': form.get(FIELD.NAME)!.touched && form.get(FIELD.NAME)!.valid,
+                                 'invalid': form.get(FIELD.NAME)!.touched && form.get(FIELD.NAME)!.invalid
+                                }">
+                        <app-validation [control]="form.get(FIELD.NAME)!"></app-validation>
+                    </div>
+                    <div class="form-group">
+                        <label [for]="FIELD.EMAIL" class="col-form-label asterix">E-mail:</label>
+                        <input type="text" class="form-control" [id]="FIELD.EMAIL" [formControlName]="FIELD.EMAIL"
+                            [ngClass]="{
+                                'valid': form.get(FIELD.EMAIL)!.touched && form.get(FIELD.EMAIL)!.valid, 
+                                'invalid': form.get(FIELD.EMAIL)!.touched && form.get(FIELD.EMAIL)!.invalid
+                            }">
+                        <app-validation [control]="form.get(FIELD.EMAIL)!"></app-validation>
+                    </div>
+                    <div class="form-group">
+                        <label [for]="FIELD.MESSAGE" class="col-form-label asterix">Message:</label>
+                        <textarea class="form-control" [id]="FIELD.MESSAGE" rows="15" [formControlName]="FIELD.MESSAGE"
+                            [ngClass]="{
+                                'valid': form.get(FIELD.MESSAGE)!.touched && form.get(FIELD.MESSAGE)!.valid, 
+                                'invalid': form.get(FIELD.MESSAGE)!.touched && form.get(FIELD.MESSAGE)!.invalid
+                            }"></textarea>
+                        <app-validation [control]="form.get(FIELD.MESSAGE)!"></app-validation>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-dark" [disabled]="!form.valid">Send message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

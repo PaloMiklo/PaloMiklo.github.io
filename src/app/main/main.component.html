@@ -1,0 +1,7 @@
+<ul class="menu-wrapper row d-sm-flex d-block">
+    <li class="col" *ngFor="let item of menuItems">
+        <app-button [title]="item.title" [target]="item.target" (detectChanges)="detect()"></app-button>
+    </li>
+</ul>
+
+<app-object-3d></app-object-3d>

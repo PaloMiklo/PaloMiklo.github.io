@@ -1,0 +1,18 @@
+@import './variables';
+
+.valid {
+    border: 1px solid $valid-green;
+}
+
+.invalid {
+    border: 1px solid $invalid-red;
+}
+
+.invalid-text {
+    color:  $invalid-red;
+}
+
+.asterix::after {
+    color: $invalid-red;
+    content: " *";
+}

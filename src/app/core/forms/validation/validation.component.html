@@ -1,0 +1,10 @@
+<div *ngIf="control.invalid && 
+control.errors && 
+(control.dirty || control.touched)">
+    <small class="invalid-text" *ngIf="control.errors?.['required']">
+        This field is required.
+    </small>
+    <small class="invalid-text" *ngIf="control.errors?.['email']">
+        Invalid e-mail format.
+    </small>
+</div>

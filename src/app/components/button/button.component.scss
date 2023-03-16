@@ -1,0 +1,29 @@
+@import '../../../style/_variables';
+
+.btn-wrapper {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+
+    .btn {  
+        padding-top: 0px;
+        height: $btn-height;
+        width: 80%;
+        text-align: center;
+        line-height: 40px;
+        color: #FFF;
+        display: block;
+        font-size: 1.1rem;
+        cursor: pointer;
+
+        .active {
+            border-color: white;
+            border-top-left-radius: 25px;
+        } 
+    }
+}
+
+.no-focus {
+    border: none;
+    outline: 0;
+}

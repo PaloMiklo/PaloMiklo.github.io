@@ -1,0 +1,82 @@
+@import '../style/_variables';
+
+$btn-close-width: 1em;
+$btn-close-height: $btn-close-width;
+$btn-close-padding-x: .25em;
+$btn-close-padding-y: $btn-close-padding-x;
+$btn-close-color: #000;
+$btn-close-bg: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$btn-close-color}'><path d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/></svg>");
+//$btn-close-focus-shadow: $input-btn-focus-box-shadow;
+$btn-close-opacity: .5;
+$btn-close-hover-opacity: .75;
+$btn-close-focus-opacity: 1;
+$btn-close-disabled-opacity: .25;
+$btn-close-white-filter: invert(1) grayscale(100%) brightness(200%); 
+
+.modal-backdrop {
+  display: none!important;
+  z-index: -1;
+  --bs-backdrop-opacity: 0.15;
+}
+
+.fade {
+  transition: opacity .25s linear;
+}
+
+.modal-content {
+  background-color: $background-black;
+  color: $background-color-text-white;
+
+  .modal-header{
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .form-control {
+    background-color: $background-black;
+    color: $background-color-text-white;
+
+    &:focus {
+      background-color: $background-black-focus;
+      color: $background-color-focus-text-white;
+    }
+  }
+
+  .modal-footer{
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+
+}
+
+/* 575px and down */
+@media only screen and (max-width: 575px) {
+  .modal {
+    margin-top: calc($btn-height * 3.8);
+    height: 80vh;
+  }
+}
+
+/* between 576px and 767px) */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .modal {
+    margin-top: calc($btn-height * 3.3);
+
+    .modal-dialog {
+      max-width: 95vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
+
+/* 768px and up */
+@media only screen and (min-width: 768px) {
+  .modal {
+    margin-top: calc($btn-height * 1.7);
+
+    .modal-dialog {
+      max-width: 75vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
