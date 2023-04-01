@@ -68,7 +68,7 @@ export class AlertComponent extends UnsubscribeMixin(EmptyClass) implements OnIn
 
   private readonly _add = (alert: TAlertContent): void => { this.alerts.push(alert) };
 
-  private readonly _removeAlertBy = (uuid: string): void => { this.alerts = this.alerts.filter((a: IAlertContent) => a.uuid !== uuid) };
+  private readonly _removeAlertBy = (uuid: string): void => { this.alerts = this.alerts.filter((a: IAlertContent) => a.uuid !== uuid); };
 };
 
 type TAlertContent = IAlertContent & { zoomOut: boolean };

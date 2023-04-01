@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Modal } from 'bootstrap';
 import { takeUntil, tap } from 'rxjs';
+import { AlertService } from 'src/app/core/alert/service/alert.service';
 import { ModalTypes } from 'src/app/core/enum';
 import { MessageModel, MessageModelFields } from 'src/app/core/forms/model/message';
 import { IMessage } from 'src/app/core/model';
@@ -30,6 +31,7 @@ export class ContactModalComponent extends ModalDirective implements OnInit, Aft
 
   constructor(
     private readonly _service: ContactModalService,
+    private readonly _alert: AlertService,
     protected override readonly state: MenuButtonsStateService,
     protected override readonly busyService: BusyService,
     protected override readonly route: ActivatedRoute,
@@ -54,12 +56,12 @@ export class ContactModalComponent extends ModalDirective implements OnInit, Aft
 
   public readonly onSend = (): void => {
     const mssg: IMessage = Object.assign(
-      this.form.getRawValue(),
-      { datetime: new Date().toISOString() }
-    );
+        this.form.getRawValue(),
+        { datetime: new Date().toISOString() }
+      );
     this._service.sentMessage$(mssg).pipe(
       tap(() => this.form.reset()),
       takeUntil(this.unsubscribe$)
-    ).subscribe();
-  };
+    ).subscribe()
+  }
 }

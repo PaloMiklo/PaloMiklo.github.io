@@ -31,5 +31,15 @@ export class AlertService {
     ).subscribe();
   };
 
+  public readonly info = (mssg: string): void => {
+    const uuid = v4();
+    of([]).pipe(
+      tap(() => this.display.next(this._contentFactory(mssg, AlertType.INFO, uuid))),
+      delay(ALERT_TIMEOUT_ON_OFF),
+      tap(() => this.display.next(this._contentFactory(mssg, AlertType.INFO, uuid))),
+      take(1)
+    ).subscribe();
+  };
+
   private readonly _contentFactory = (mssg: string, type: AlertType, uuid: string): IAlertContent => ({ mssg, type, uuid });
 };
