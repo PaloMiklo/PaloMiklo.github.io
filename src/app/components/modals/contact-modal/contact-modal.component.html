@@ -4,12 +4,17 @@
         <div class="modal-content">
             <form [formGroup]="form" (ngSubmit)="onSend()">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="contactTitle"><i class="fa fa-1x" [ngClass]="form.get('name')!.touched && 
+                    <div class="col">
+                        <h5 class="modal-title" id="contactTitle"><i class="fa fa-1x" [ngClass]="form.get('name')!.touched && 
                             form.get('email')!.touched && 
                             form.get('message')!.touched && 
                             form.invalid ? 'fa-warning invalid-text' : ''" aria-hidden="true">
                         </i>Leave a message</h5>
-                    <app-closing-cross data-bs-dismiss="modal"></app-closing-cross>
+                    </div>
+                    <div class="col d-flex flex-grow-0 justify-content-center align-items-center">
+                        <button type="button" class="btn btn-circle btn-linkedin" onclick="window.open('https://www.linkedin.com/in/pavol-mikla%C5%A1-2a0b6b174/', '_blank');"></button>
+                        <app-closing-cross data-bs-dismiss="modal"></app-closing-cross>
+                    </div>
                 </div>
                 <div class="modal-body">
                     <div class="form-group">
