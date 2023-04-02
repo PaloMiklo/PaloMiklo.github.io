@@ -47,18 +47,7 @@ export class AlertComponent extends UnsubscribeMixin(EmptyClass) implements OnIn
   };
 
   public readonly copyMessage = (mssg: string, i: number): void => {
-    const selBox = document.createElement('textarea');
-    selBox.style.position = 'fixed';
-    selBox.style.left = '0';
-    selBox.style.top = '0';
-    selBox.style.opacity = '0';
-    selBox.value = mssg;
-    document.body.appendChild(selBox);
-    selBox.focus();
-    selBox.select();
-    document.execCommand('copy');
-    document.body.removeChild(selBox);
-
+    navigator.clipboard.writeText(mssg)
     this.alerts[i].zoomOut = !this.alerts[i].zoomOut;
   };
 
