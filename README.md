@@ -1,10 +1,12 @@
 # Personal
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2 and is a client side application to my personal application. 
+I have created it as a fun experimental application where I try out new ideas and technologies time to time in my free time, just for the sake of having fun.
+The application built from the latest committed changes is deployed and can be accessed [here](palomiklo.github.io/#/).
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Take a look at the `package.json` file to find the appropriate command for starting a development server. Once the server is running, navigate to `http://localhost:4200/` in your browser. If you make any changes to the source files, the application will automatically reload.      
 
 ## Code scaffolding
 
