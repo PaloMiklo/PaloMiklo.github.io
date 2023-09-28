@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2 and is a client side application to my personal application. 
 I have created it as a fun experimental application where I try out new ideas and technologies time to time in my free time, just for the sake of having fun.
-The application built from the latest committed changes is deployed and can be accessed [here](palomiklo.github.io/#/).
+The application built from the latest committed changes is deployed and can be accessed [here](https://palomiklo.github.io).
 
 ## Development server
 
