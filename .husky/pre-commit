@@ -5,4 +5,4 @@ echo "
 
 
 "
-npm run build
+gulp build:date && npm run build && git add .
