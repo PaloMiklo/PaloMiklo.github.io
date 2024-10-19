@@ -2,5 +2,5 @@ export const environment = {
   production: true,
   cloudFns: false,
   mail: 'pmmiklas@gmail.com',
-  buildDate: '2023-04-01T08:49:53.433Z'
+  buildDate: '2024-10-19T15:51:46.876Z'
 };

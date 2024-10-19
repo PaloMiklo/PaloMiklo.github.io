@@ -8,10 +8,11 @@
     "start": "ng serve --proxy-config proxy.conf.json",
     "prebuild": "node rewrite-environment.js",
     "build": "ng build",
-    "postinstall": "gulp post:install",
+    "postinstall": "gulp post:install && husky init",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "testheadless": "ng test --watch=false --browsers=ChromeHeadless"
+    "testheadless": "ng test --watch=false --browsers=ChromeHeadless",
+    "prepare": "husky"
   },
   "private": true,
   "dependencies": {
@@ -48,6 +49,7 @@
     "@types/uuid": "^8.3.4",
     "gulp": "^5.0.0",
     "gulp-imagemin": "^9.1.0",
+    "husky": "^9.1.6",
     "imagemin-mozjpeg": "^10.0.0",
     "imagemin-optipng": "^8.0.0",
     "imagemin-svgo": "^11.0.1",
